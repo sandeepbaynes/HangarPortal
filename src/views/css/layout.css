@@ -1,0 +1,60 @@
+html,body {
+	height: 100%;
+}
+
+footer {
+	bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.my-login-page .brand {
+	width: 160px;
+}
+
+.my-login-page .brand img {
+	width: 100%;
+}
+
+.my-login-page .card-wrapper {
+	width: 400px;
+}
+.my-login-page .card-wrapperaddremove {
+	width: 800px;
+}
+
+.my-login-page .form-group label {
+	width: 100%;
+}
+
+.logo {
+    max-width: 200px;
+    max-height: 97px;
+}
+
+.nav-item a {
+    min-width: 100px;
+}
+
+.tiles-page .card {
+	max-width: 400px;
+}
+
+@media screen and (max-width:767px){
+	.navbar-collapse{
+		min-width: 125px;
+	}
+	.logo{
+		max-width:160px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.my-login-page .card-wrapperaddremove {
+		width: 90%;
+	}
+	.logo{
+		max-width:130px;
+	}
+	
+}

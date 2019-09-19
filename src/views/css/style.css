@@ -1,0 +1,144 @@
+/*RESET CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, .row {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.4;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+select,option{
+	-moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+/*RESET CSS END*/
+html,body {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+body.my-login-page, p{
+	font-size: 14px;
+}
+
+.my-login-page .brand {
+	overflow: hidden;
+	margin: 40px auto;
+	position: relative;
+	z-index: 1;
+}
+
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.my-login-page .card.fat {
+	padding: 10px;
+}
+
+.my-login-page .card .card-title {
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+.marginR20 {
+	margin-right: 20px;
+}
+.my-login-page .form-control {
+	border-width: 1px;
+}
+
+.my-login-page .btn.btn-block {
+	padding: 12px 10px;
+}
+
+.my-login-page .footer {
+	margin: 40px 0;
+	text-align: center;
+}
+
+.navbar .navbar-nav .nav-item a {
+	transition: color 0.3s ease-in, background-color 0.25s ease-out;
+}
+
+.nav-item a {
+    text-align: center;
+}
+
+.card {
+    margin: 10px;
+	padding: 10px;
+}
+
+.card-body p{
+	margin-bottom: 12px;
+}
+
+@media screen and (max-width:768px){
+	.navbar-collapse{
+		position: absolute;
+		top: 51px;
+		left: -50px;
+		border-radius: 3px;
+		z-index: 1;
+	}
+	
+	.btn{
+		font-size: 0.90rem;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.my-login-page .card-wrapperaddremove {
+		width: 90%;
+		margin: 0 auto;
+	}
+	.logo{
+		max-width:130px;
+	}	
+}
+
+@media screen and (max-width: 320px) {
+	.my-login-page .card.fat {
+		padding: 0;
+	}
+
+	.my-login-page .card.fat .card-body {
+		padding: 15px;
+	}
+}

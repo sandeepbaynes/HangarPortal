@@ -1,0 +1,74 @@
+body.my-login-page {
+	background-color: #f7f9fb;
+}
+
+.my-login-page .brand {
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.my-login-page .footer {
+	color: #888;
+}
+
+.bg-black{background-color:#000}
+
+.navbar .navbar-nav .nav-item a {
+	color: #fff;
+}
+
+.navbar .navbar-nav .nav-item a:hover {
+	color: #c4e74c;
+}
+
+@media screen and (max-width:767px){
+	.navbar-collapse{
+		background: #c4e74c;
+		box-shadow: 0 0px 1px 0px #888;
+	}
+	.navbar .navbar-nav .nav-item a{
+		color:#000;
+		border-bottom:1px solid #000;
+	}
+	.navbar .navbar-nav .nav-item a:hover{
+		color:#c4e74c;
+		background:#000;
+		border-bottom:1px solid #000;
+	}
+}
+
+/*BootStrap Changes*/
+.btn-primary {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+.btn-primary:hover {
+    color: #000;
+    background-color: #6ee9d4;
+    border-color: #6ee9d4;
+}
+.close{color: #ff0000;}
+.close:hover{
+	color: #ff0000;
+	opacity:.7;
+}
+.form-control:focus{
+	border-color: #c4e74c;
+	box-shadow: 0 0 0 0.1rem #c4e74c;
+}
+button:focus{
+	outline: 1px solid #c4e74c;
+}
+a{
+	color:#555;
+}
+a:hover {
+    color: #6ee9d4;
+    text-decoration: none;
+}
+/*BS Changes*/
