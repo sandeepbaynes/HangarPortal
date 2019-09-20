@@ -6,11 +6,10 @@
   "scripts": {
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=dev ts-node-dev --respawn --transpileOnly ./app.ts",
-    "play": "NODE_ENV=play ts-node-dev --respawn --transpileOnly ./index.ts",
-    "prod": "npm run clean && tsc && npm run copy:assets && NODE_ENV=prod node ./deploy/app.js",
-    "clean": "rimraf deploy",
-    "copy:assets": "cp -r views deploy"
+    "dev": "NODE_ENV=dev ts-node-dev --respawn --transpileOnly ./ts/app.ts",
+    "play": "NODE_ENV=play ts-node-dev --respawn --transpileOnly ./ts/play.ts",
+    "prod": "tsc && NODE_ENV=prod node ./js/app.js",
+    "clean": "rimraf js"
   },
   "author": "Sandeep Baynes",
   "license": "ISC",
@@ -19,7 +18,15 @@
     "@types/express": "^4.17.1",
     "config": "^3.2.2",
     "express": "^4.17.1",
-    "ts-node-dev": "^1.0.0-pre.42",
+    "ts-node-dev": "^1.0.0-pre.42"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   }
 }

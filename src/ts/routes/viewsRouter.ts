@@ -1,13 +1,17 @@
 import express = require('express');
-import { Http2SecureServer } from 'http2';
+import iRouter from '../contracts/iRouter';
 
-export default class viewsRouter {
-    public router: express.Router;
-    public baseDir: string;
+export default class viewsRouter implements iRouter {
+    private router: express.Router;
+    private baseDir: string;
     constructor() {
         this.router = express.Router();
-        this.baseDir = `${__dirname}/../views/`;
+        this.baseDir = `${__dirname}/../../views/`;
         this.initRouter();
+    }
+
+    public getRouter(): express.Router {
+        return this.router;
     }
 
     private initRouter(): void {
