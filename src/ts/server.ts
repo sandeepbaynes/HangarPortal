@@ -1,8 +1,11 @@
 import express = require('express');
+import bodyparser = require('body-parser');
 import config from 'config';
 import { iAuthenticator } from './custom_modules/contracts/authenticator/iAuthenticator';
 import iRouter from './contracts/iRouter';
 import routeFactory from './factory/routeFactory';
+import cors = require('cors');
+
 
 class server {
     private app: express.Application;
@@ -24,10 +27,31 @@ class server {
     }
 
     private init(): void {
+        if (process.env.NODE_ENV == 'dev') {
+            this.app.use(cors(this.getCorsOptions()));
+        }
         this.app.use('/', this.authenticator.validate);
+        this.app.use(bodyparser.json());
         this.initDefaultRedirect();
         this.initRoutes();
         this.initStaticRoutes();
+    }
+
+    ///
+    //Section used only for dev env. Vue cli renders the UI and will require cors enabled to send requests to back end. In prod, this should render from views controller
+    ///
+    private getCorsOptions(): object {
+        var port = process.env.PORT || config.get('port');
+        var whitelist = [`http://localhost:${port}`, 'http://172.17.6.55:8080']
+        return {
+            origin: function (origin: any, callback: Function) {
+                if (!origin || whitelist.indexOf(origin) !== -1) {
+                    callback(null, true)
+                } else {
+                    callback(new Error('Not allowed by CORS'))
+                }
+            }
+        }
     }
 
     private initDefaultRedirect() {
@@ -48,8 +72,9 @@ class server {
     }
 
     public start(): void {
-        this.app.listen(config.get('port'), function () {
-            console.log(`server started on port ${config.get('port')}`);
+        var port = process.env.PORT || config.get('port')
+        this.app.listen(port, function () {
+            console.log(`Hangar Portal server started on port ${port}`);
         });
     }
 }
